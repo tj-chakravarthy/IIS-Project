@@ -4,6 +4,7 @@
 
 # allowed
 !.gitignore
+!.gitattributes
 !README.md
 !requirements.txt
 !**/*.py
