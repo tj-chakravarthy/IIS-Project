@@ -1,0 +1,3 @@
+furhat-remote-api
+opencv-python
+numpy

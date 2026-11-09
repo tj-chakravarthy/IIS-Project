@@ -1,0 +1,17 @@
+# deny first: nothing is tracked unless listed below
+*
+!*/
+
+# allowed
+!.gitignore
+!README.md
+!requirements.txt
+!**/*.py
+!report/*.tex
+!report/*.png
+
+# never, even if matched above
+data/
+models/
+__pycache__/
+.venv/

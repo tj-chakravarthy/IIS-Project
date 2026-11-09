@@ -1,0 +1,130 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------------------------
+% Packages
+% ---------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,headheight=14pt]{geometry}
+\usepackage{lmodern}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=navy,urlcolor=navy,citecolor=navy]{hyperref}
+
+% ---------------------------------------------------------------------------
+% Colours and typography
+% ---------------------------------------------------------------------------
+\definecolor{navy}{HTML}{002B5C}
+\definecolor{accent}{HTML}{990000}   % Uppsala red
+\definecolor{grey}{HTML}{5A5A5A}
+\definecolor{lightgrey}{HTML}{F2F2F2}
+
+\titleformat{\section}
+  {\color{navy}\Large\bfseries}{\thesection}{0.8em}{}
+  [\vspace{-0.4em}{\color{navy}\titlerule[0.8pt]}]
+\titleformat{\subsection}
+  {\color{navy}\large\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}
+  {\bfseries}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.8em}{0.8em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.4em}
+
+\captionsetup{font=small,labelfont={bf,color=navy},justification=raggedright,singlelinecheck=false}
+\setlist{nosep,leftmargin=*}
+
+% ---------------------------------------------------------------------------
+% Header and footer
+% ---------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\color{grey}\reportTitle\ --- \reportKind}
+\rhead{\small\color{grey}Page \thepage\ of \pageref{LastPage}}
+\cfoot{\small\color{grey}Uppsala University \textbar\ \reportCourse}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ---------------------------------------------------------------------------
+% Report metadata (edit here; used on the cover page, header and footer)
+% ---------------------------------------------------------------------------
+\newcommand{\reportTitle}{Project Title}
+\newcommand{\reportSubtitle}{An affect-aware Furhat robot}
+\newcommand{\reportKind}{Project Report}
+\newcommand{\reportCourse}{Intelligent Interactive Systems, HT 2026}
+\newcommand{\reportDate}{15 January 2027}
+\newcommand{\reportVersion}{Draft}
+
+% ---------------------------------------------------------------------------
+% Building blocks
+% ---------------------------------------------------------------------------
+% \takeaway{...}  -- one-sentence message at the top of a section
+\newtcolorbox{takeawaybox}{
+  enhanced, colback=lightgrey, colframe=lightgrey,
+  borderline west={3pt}{0pt}{navy}, arc=0pt, boxrule=0pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt, fontupper=\bfseries
+}
+\newcommand{\takeaway}[1]{\begin{takeawaybox}#1\end{takeawaybox}}
+
+% \source{...}  -- source line under a table or figure
+\newcommand{\source}[1]{\par\vspace{2pt}{\footnotesize\color{grey}Source: #1}}
+
+% \todo{...}  -- visible note in the draft; remove before delivery
+\newcommand{\todo}[1]{{\color{accent}\small[TODO: #1]}}
+
+\begin{document}
+
+% ===========================================================================
+% Cover page
+% ===========================================================================
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{0.5cm}
+    \includegraphics[width=3.5cm]{UU_LOGO.png}
+
+    \vspace{0.6cm}
+    {\large UPPSALA UNIVERSITY}\\[0.2cm]
+    {\normalsize Department of Information Technology}
+
+    \vspace{2.5cm}
+    {\color{navy}\Huge\bfseries \reportTitle}\\[0.6cm]
+    {\LARGE \reportSubtitle}
+
+    \vspace{1.2cm}
+    {\large \reportKind}
+
+    \vspace{1.8cm}
+    \begin{tabular}{rl}
+        \textbf{Team}      & Tejas Chakravarthy \\
+                           & Ahmad Sabbah \\
+                           & Tijn Veldwijk \\
+                           & Koen Veldhorst \\[0.15cm]
+        \textbf{Teachers}  & Roman Denkin, Marco Acerbis, Yue Lou \\[0.15cm]
+        \textbf{Course}    & \reportCourse \\[0.15cm]
+        \textbf{Source}    & \url{https://github.com/tj-chakravarthy/IIS-Project} \\
+    \end{tabular}
+\end{center}
+\vfill
+\begin{center}
+    {\large \reportDate}\\[0.1cm]
+    {\color{grey}\reportVersion}
+\end{center}
+\clearpage
+
+% Body goes here once the course report template is known.
+
+\end{document}
